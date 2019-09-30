@@ -18,7 +18,7 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="59dp"
+                android:layout_width="113dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Test Logs (task 4.0)" />
@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Activity (task 5.4)" />
 
         </LinearLayout>
 
@@ -39,7 +39,7 @@
 
             <EditText
                 android:id="@+id/editText"
-                android:layout_width="91dp"
+                android:layout_width="162dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -47,11 +47,11 @@
                 android:text="Test Logs" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/activity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Go to Actvity Two" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
