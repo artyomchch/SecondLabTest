@@ -5,15 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "TestTask4.0";
     Button  Activity;
     Button Browser;
-    Button Toast;
+    Button ToastTask;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Browser = findViewById(R.id.browser);
         Browser.setOnClickListener(this);
 
+        ToastTask = findViewById(R.id.toast);
+        ToastTask.setOnClickListener(this);
 
     }
 
@@ -45,6 +51,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent sec = new Intent(this, BrowserActivity.class);
                 startActivity(sec);
                 break;
+            case R.id.toast:
+                   Toast toast = Toast.makeText(getApplicationContext(),"Welcome to MIREA!", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.BOTTOM, 0, 0);
+                LinearLayout toastContainer = (LinearLayout) toast.getView();
+                ImageView catImageView = new ImageView(getApplicationContext());
+                catImageView.setImageResource(R.drawable.ic_launcher_background);
+                toastContainer.addView(catImageView, 0);
+                toast.show();
             default:
                 break;
         }
