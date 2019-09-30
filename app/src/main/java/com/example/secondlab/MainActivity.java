@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final String TAG = "TestTask4.0";
     Button  Activity;
+    Button Browser;
+    Button Toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Activity = findViewById(R.id.activity);
         Activity.setOnClickListener(this);
+
+        Browser = findViewById(R.id.browser);
+        Browser.setOnClickListener(this);
 
 
     }
@@ -35,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.activity:
                 Intent intent = new Intent(this, ActivityTwo.class);
                 startActivity(intent);
+                break;
+            case R.id.browser:
+                Intent sec = new Intent(this, BrowserActivity.class);
+                startActivity(sec);
                 break;
             default:
                 break;
