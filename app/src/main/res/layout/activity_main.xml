@@ -125,7 +125,7 @@
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="70dp"
+                android:layout_width="118dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="NotificationApp (task 6.4)" />
@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Dialog (task 6.6)" />
         </LinearLayout>
 
         <LinearLayout
@@ -145,17 +145,17 @@
 
             <Button
                 android:id="@+id/noti"
-                android:layout_width="103dp"
+                android:layout_width="133dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Try Notification" />
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/dialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Show dialog" />
         </LinearLayout>
     </LinearLayout>
 

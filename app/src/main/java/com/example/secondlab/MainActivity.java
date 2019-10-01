@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button Browser;
     Button ToastTask;
     Button Noti;
-
+    Button Dialog;
 
 
     @Override
@@ -54,7 +54,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Noti = findViewById(R.id.noti);
         Noti.setOnClickListener(this);
 
+        Dialog = findViewById(R.id.dialog);
+        Dialog.setOnClickListener(this);
 
+
+    }
+
+    public void onClickShowDialog(View view) {
+        MyAlertDialogFragment dialogFragment = new MyAlertDialogFragment ();
+         dialogFragment.show(getSupportFragmentManager(), "dialog");
+
+
+    }
+
+    public void onOkClicked() {
+        Toast.makeText(getApplicationContext(), "Вы выбрали кнопку \"Иду дальше\"!",
+                Toast.LENGTH_LONG).show();
+    }
+    public void onCancelClicked() {
+        Toast.makeText(getApplicationContext(), "Вы выбрали кнопку \"Нет\"!",
+                Toast.LENGTH_LONG).show();
+    }
+    public void onNeutralClicked() {
+        Toast.makeText(getApplicationContext(), "Вы выбрали кнопку \"На паузе\"!",
+                Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -79,6 +102,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.noti:
                 notification(view);
                break;
+            case R.id.dialog:
+                onClickShowDialog(view);
+                break;
             default:
 
                 break;
@@ -118,13 +144,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this, CHANNEL_ID)
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("Title")
+                        .setContentTitle("There are some notifications")
                         .setContentText("Notification text for MIREA")
                         .setWhen(System.currentTimeMillis())
-                        .setProgress(100, 50, false)
+                        .setProgress(100, 80, false)
                         .setContentIntent(resultPendingIntent);
         Notification notification = builder.build();
 // Show Notification
         notificationManager.notify(IDENTIFICATE_MSG++, notification);
     }
+
+
 }
